@@ -1,0 +1,12 @@
+.container {
+    padding: 10px;
+    text-align: center;
+}
+
+.input-row {
+    margin-bottom: 20px;
+}
+
+.prediction-row {
+    margin-top: 50px;
+}

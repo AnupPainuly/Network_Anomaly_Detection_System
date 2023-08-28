@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+     <html>
+     <head>
+         <title>Machine Learning Model Deployment</title>
+         <style>
+             body {
+                 margin:0;
+                 padding:0;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 height: 100vh;
+                 background-color: #f2f2f2;
+             }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #ffffff;
+                padding: 100px; /* Adjust padding here */
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+     
+             form {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 flex-direction: column;
+                 background-color: #ffffff;
+                 padding: 20px;
+                 border-radius: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+             }
+     
+             input[type="text"] {
+                 width: 200px;
+                 padding: 10px;
+                 margin-bottom: 10px;
+                 border: 1px solid #ccc;
+                 border-radius: 5px;
+             }
+     
+             input[type="submit"] {
+                 padding: 10px 20px;
+                 background-color: #4CAF50;
+                 color: #ffffff;
+                 border: none;
+                 border-radius: 5px;
+                 cursor: pointer;
+             }
+     
+             p {
+                 margin-top: 20px;
+                 font-weight: bold;
+             }
+
+             .error-message {
+                color: red;
+              }
+         </style>
+         <script>
+            function validateFloatInput(inputElement) {
+                var inputValue = inputElement.value.trim();
+                var isValidFloat = !isNaN(inputValue) && inputValue !== '';
+
+                if (!isValidFloat) {
+                    inputElement.style.border = '1px solid red';
+                } else {
+                    inputElement.style.border = '1px solid #ccc';
+                }
+            }
+         </script>
+     </head>
+     <body>
+         <div class="container">
+             <h1>Network Anomaly Detection</h1> <!-- New header -->
+             <form action="/predict" method="post">
+                 <input type="text" name="bwd_packet_length_std" placeholder="Bwd Packet Length Std" oninput="validateFloatInput(this)">
+                 <input type="text" name="flow_bytes_per_s" placeholder="Flow Bytes/s" oninput="validateFloatInput(this)">
+                 <input type="text" name="total_length_fwd_packets" placeholder="Total Length of Fwd Packets" oninput="validateFloatInput(this)">
+                 <input type="text" name="fwd_packet_length_std" placeholder="Fwd Packet Length Std" oninput="validateFloatInput(this)">
+                 <input type="text" name="flow_iat_std" placeholder="Flow IAT Std" oninput="validateFloatInput(this)">
+                 <input type="text" name="flow_iat_min" placeholder="Flow IAT Min" oninput="validateFloatInput(this)">
+                 <input type="text" name="flow_iat_total" placeholder="Flow IAT Total" oninput="validateFloatInput(this)">
+                 <input type="submit" value="Predict">
+             </form>
+         {% if prediction %}
+             <p>Prediction: {{ prediction | safe }}</p>
+         {% endif %}
+         </div>
+     </body>
+     </html>
