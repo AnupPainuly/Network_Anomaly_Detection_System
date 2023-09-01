@@ -21,7 +21,7 @@ The implementation phase consists of 5 steps:
 
 ### 1. Pre-processing
 
-This step consists of a single file (data_preprocessing.ipynb). To use this program, place the dataset () files in the "CSVs" folder at the same location as the program.
+This step consists of a single file (data_preprocessing.ipynb). To use this program, place the dataset [source](https://www.unb.ca/cic/datasets/ids-2017.html) files in the "CSVs" folder at the same location as the program.
 
 After executing this file, a file named "all_data.csv" will be created, which is a prerequisite for the other steps.
 
