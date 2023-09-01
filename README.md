@@ -17,11 +17,9 @@ Before running the implementation files, make sure you have Python 3.11.5 instal
 
 ## Implementation Steps
 
-The implementation phase consists of 5 steps:
-
 ### 1. Pre-processing
 
-This step consists of a single file (data_preprocessing.ipynb). To use this program, place the dataset [source](https://www.unb.ca/cic/datasets/ids-2017.html) files in the "CSVs" folder at the same location as the program.
+This step consists of a single file (data_preprocessing.ipynb). To use this program, place the [data](https://www.unb.ca/cic/datasets/ids-2017.html) files in the "CSVs" folder at the same location as the program.
 
 After executing this file, a file named "all_data.csv" will be created, which is a prerequisite for the other steps.
 
@@ -31,29 +29,31 @@ This step consists of a single file (data_preprocessing.ipynb). It examines the 
 
 ### 3. Feature Selection
 
-#### b. feature_selection_for_all_data.ipynb
+This program (feature_selection.ipynb) applies feature selection to the entire dataset using the "all_data.csv" file and the Random Forest Regressor algorithm. The feature importance are displayed with the help of a bar chart.
 
-This program applies feature selection to the entire dataset using the "all_data.csv" file and the Random Forest Regressor algorithm. The feature importance are displayed with the help of a bar chart.
+### 4. Machine Learning Implementation
 
-### 5. Machine Learning Implementation
+This program (seven_featured_ML_implementation.ipynb) implements machine learning methods on the "all_data.csv" file using features selected from the previous step. It applies 7 machine learning algorithms, records the results.
 
-#### b. machine_learning_implementation_with_18_feature.ipynb
+### 5. Model Deployment
 
-This program implements machine learning methods on the "all_data.csv" file using features selected from the previous step. It applies 7 machine learning algorithms, records the results.
+Model deployment is the process of making trained machine learning models accessible and operational for real-world use. Deployed models allow automated
+and efficient execution of predictions on new data. “Pickle Library” of Python was used to save and export the best model.
+Frontend development plays a crucial role in delivering user-friendly and visually appealing web applications that meet both functional and aesthetic
+requirements. For this project we used “Flask Library” of Python to build the API which was deployed on AWS and private server as well.
 
-#### c. machine_learning_implementation_with_7_feature.ipynb
-
-This program implements machine learning methods on the "all_data.csv" file using features selected from the previous step. It applies 7 machine learning algorithms, records the results.
-
-## Execution Times
+## Execution Time
 
 Here are the approximate execution times for each step based on the author's hardware configuration:
 
-- Pre-processing: 157 seconds
-- Exploratory: 13 seconds
-- Feature Selection for All Data: 55,626 seconds
-- Machine Learning Implementation with 18 Features: 25082 seconds
-- Machine Learning Implementation with 7 Features: 12714 seconds
+
+| Program                                          |   Execution Time (seconds)|
+|--------------------------------------------------|---------------------------|
+| Data processing                                  |    157 seconds            |          
+| Exploratory Data Analysis                        |    13 seconds             |          
+| Feature Selection                                |    55,626 seconds         |       
+| Machine Learning Implementation with 18 Features |    25,082 seconds         |   
+| Machine Learning Implementation with 7 Features  |    12,714 seconds         |
 
 ## Hardware Specifications
 
