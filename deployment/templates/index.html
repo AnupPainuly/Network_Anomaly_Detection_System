@@ -87,6 +87,8 @@
              </form>
          {% if prediction %}
              <p>Prediction: {{ prediction | safe }}</p>
+         {% else %}
+             <p>{{ error | safe }}</p>
          {% endif %}
          </div>
      </body>
